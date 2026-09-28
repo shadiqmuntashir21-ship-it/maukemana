@@ -1,0 +1,10 @@
+{
+  "name": "MauKeMana",
+  "short_name": "MauKeMana",
+  "description": "Roadmap pengembangan diri berbasis fase hidup.",
+  "start_url": "/#home",
+  "display": "standalone",
+  "background_color": "#f7f8fa",
+  "theme_color": "#f7f8fa",
+  "icons": [{"src":"/icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]
+}
