@@ -45,7 +45,7 @@ async function loadUser(){
   ]);
   state.profile=profile.data||null;state.saves=new Set((saves.data||[]).map(x=>x.topic_id));state.progress=Object.fromEntries((progress.data||[]).map(x=>[x.topic_id,x.status]));
   state.reflections={};for(const x of reflections.data||[]){if(!state.reflections[x.topic_id])state.reflections[x.topic_id]=x.body}
-  state.userInterests=new Set((userInterests.data||[]).map(x=>x.interest_id));state.isAdmin=!!admin.data;
+  state.userInterests=new Set((userInterests.data||[]).map(x=>x.interest_id));state.isAdmin=!!admin.data;if(state.userInterests.size){state.selectedInterests=new Set(state.userInterests);localStorage.setItem('mk_interests',JSON.stringify([...state.selectedInterests]))}
   if(state.profile?.life_stage_id){state.selectedStage=state.profile.life_stage_id;localStorage.setItem('mk_stage',state.selectedStage)}
 }
 async function init(){
